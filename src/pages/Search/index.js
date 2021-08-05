@@ -8,15 +8,16 @@ import * as Styled from "./styles/StyledSearch";
 
 const Search = () => {
   const [selectedCharacterId, setSelectedCharacterId] = React.useState(null);
+  const [filterInput, setFilterInput] = React.useState("");
   const searchRef = React.useRef();
 
   return (
     <Layout>
       <Styled.GridColumn>
-        <CharacterGrid characters={heroes} handleSelectCharacter={setSelectedCharacterId} />
+        <CharacterGrid characters={heroes.filter(hero=>hero.name.toLocaleLowerCase().includes(filterInput.toLocaleLowerCase()))} handleSelectCharacter={setSelectedCharacterId} />
       </Styled.GridColumn>
       <Styled.FeaturedColumn fixed>
-        <Styled.SearchInput ref={searchRef} type="search" placeholder="Find a Hero" />
+        <Styled.SearchInput ref={searchRef} type="search" placeholder="Find a Hero" onChange={e=>setFilterInput(e.target.value)} />
         <SearchIcon onClick={() => searchRef.current.focus()} />
         <Styled.LineAccent />
         <FeaturedCharacter id={selectedCharacterId} />

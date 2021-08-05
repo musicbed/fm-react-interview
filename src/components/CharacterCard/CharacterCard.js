@@ -22,7 +22,7 @@ const CharacterCard = ({ character }) => {
                 {character.biography.alignment === "bad" ? "Villian" : "Superhero"}
               </Styled.Alignment>
             </Styled.NameWrapper>
-            <Styled.Image>
+            <Styled.Image image={character.image.url}>
               <Styled.PowerScore>
                 Power Score
                 <Styled.PowerScoreNumber>{powerScore()}</Styled.PowerScoreNumber>

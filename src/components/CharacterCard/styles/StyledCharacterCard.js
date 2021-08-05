@@ -30,7 +30,11 @@ export const Alignment = styled.div(({ isBad }) => ({
   padding: "2px 5px"
 }));
 export const Image = styled.div(({ image }) => ({
-  ...image // delete line
+  backgroundImage: `url(${image})` ,
+  height: 265,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  position: "relative"
 }));
 export const PowerScore = styled.div({
   position: "absolute",
@@ -48,12 +52,16 @@ export const PowerScore = styled.div({
   fontSize: 7,
   fontWeight: 500,
   fontStyle: "italic",
-  textAlign: "center"
+  textAlign: "center",
+  borderRadius: "15px 3px 15px 3px"
+
 });
 export const PowerScoreNumber = styled.div({
   fontSize: 28,
   fontWeight: 700,
-  fontStyle: "italic"
+  fontStyle: "italic",
+
+
 });
 export const Build = styled.div({
   position: "relative",
