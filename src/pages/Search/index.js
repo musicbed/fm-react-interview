@@ -10,9 +10,9 @@ const Search = () => {
   const [selectedCharacterId, setSelectedCharacterId] = React.useState(null);
   const searchRef = React.useRef();
   const [filteredList, setFilteredList] = React.useState(heroes);
-  const handleSearch = (searchTerm) => {
-    setFilteredList(heroes.filter((character) => character.name.toUpperCase().includes(searchTerm.toUpperCase())))
-  }
+  const handleSearch = (searchTerm) => setFilteredList(
+    heroes.filter((character) => character.name.toUpperCase().includes(searchTerm.toUpperCase()))
+  )
 
   return (
     <Layout>
