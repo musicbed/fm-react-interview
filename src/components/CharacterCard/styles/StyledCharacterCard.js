@@ -30,7 +30,11 @@ export const Alignment = styled.div(({ isBad }) => ({
   padding: "2px 5px"
 }));
 export const Image = styled.div(({ image }) => ({
-  ...image // delete line
+  backgroundImage: `url(${image})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  height: 256,
+  position: 'relative',
 }));
 export const PowerScore = styled.div({
   position: "absolute",
@@ -48,7 +52,9 @@ export const PowerScore = styled.div({
   fontSize: 7,
   fontWeight: 500,
   fontStyle: "italic",
-  textAlign: "center"
+  textAlign: "center",
+  borderTopLeftRadius: 10,
+  borderBottomRightRadius: 10,
 });
 export const PowerScoreNumber = styled.div({
   fontSize: 28,
@@ -98,7 +104,20 @@ export const PowerStats = styled.div({
   flexDirection: "column",
   marginBottom: 10
 });
-export const PowerStatWrapper = styled.div({});
+export const PowerStatWrapper = styled.div({
+  display: 'flex',
+  flexWrap: 'wrap',
+});
+
+export const PowerStat = styled.div({
+  border: '1px solid white',
+  borderRadius: '20px',
+  padding: '5px',
+  marginRight: '5px',
+  marginBottom: '5px',
+  fontSize: 12,
+  fontStyle: 'italic',
+});
 
 export const TitleWrapper = styled.div({
   display: "flex",

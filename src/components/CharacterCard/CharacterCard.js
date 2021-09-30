@@ -22,7 +22,7 @@ const CharacterCard = ({ character }) => {
                 {character.biography.alignment === "bad" ? "Villian" : "Superhero"}
               </Styled.Alignment>
             </Styled.NameWrapper>
-            <Styled.Image>
+            <Styled.Image image={character.image.url}>
               <Styled.PowerScore>
                 Power Score
                 <Styled.PowerScoreNumber>{powerScore()}</Styled.PowerScoreNumber>
@@ -42,7 +42,7 @@ const CharacterCard = ({ character }) => {
                 <Styled.Line />
               </Styled.TitleWrapper>
               <Styled.PowerStatWrapper>
-                {Object.entries(character.powerstats).map(([name, value]) => `${name}: ${value}`)}
+                {Object.entries(character.powerstats).map(([name, value]) => <Styled.PowerStat key={name}>{`${name}: ${value}`}</Styled.PowerStat>)}
               </Styled.PowerStatWrapper>
             </Styled.PowerStats>
 
